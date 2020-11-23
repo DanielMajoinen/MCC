@@ -3,6 +3,9 @@ using System.Data.SqlClient;
 
 namespace Moula.Data
 {
+    /// <summary>
+    /// This factory allows the database connection to be mocked and keeps connection configuration in a single location.
+    /// </summary>
     public class DatabaseFactory : IDatabaseFactory
     {
         private string _connectionString { get; }
