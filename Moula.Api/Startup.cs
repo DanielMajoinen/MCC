@@ -18,8 +18,8 @@ namespace Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.ConfigureServices(); // Register our service bindings
+            services.ConfigureServices() // Register our service bindings
+                    .AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
