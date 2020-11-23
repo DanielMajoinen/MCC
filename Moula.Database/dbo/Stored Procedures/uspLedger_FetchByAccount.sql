@@ -10,7 +10,7 @@ SELECT
 	L.[ClosedReason]
 FROM [dbo].[Account] A
 LEFT JOIN [dbo].[Ledger] L
-	ON A.[ID] = L.[AccountId]
+	ON A.[Id] = L.[AccountId]
 JOIN [dbo].[Status] S
 	ON L.[StatusId] = S.[Id]
 WHERE A.[Id] = @AccountId
