@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Account]
+(
+	[Id]		INT	IDENTITY (1,1)	NOT NULL,
+	[Balance]	DECIMAL (18,3)		NOT NULL CONSTRAINT [DF_Account_Balance] DEFAULT 0,
+	CONSTRAINT [PK_Account] PRIMARY KEY CLUSTERED ([Id] ASC)
+)
