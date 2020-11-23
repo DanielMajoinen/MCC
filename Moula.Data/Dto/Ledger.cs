@@ -1,7 +1,10 @@
-﻿using System;
+﻿using NPoco;
+using System;
 
 namespace Moula.Data.Dto
 {
+    [TableName("Ledger")]
+    [PrimaryKey("Id")]
     public class Ledger
     {
         public long Id { get; set; }
