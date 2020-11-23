@@ -1,6 +1,6 @@
 ﻿using NPoco;
 
-namespace Moula.Data.Dto
+namespace Moula.Data.Models
 {
     [TableName("Account")]
     [PrimaryKey("Id")]

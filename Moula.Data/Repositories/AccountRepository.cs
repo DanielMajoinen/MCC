@@ -1,4 +1,4 @@
-﻿using Moula.Data.Dto;
+﻿using Moula.Data.Models;
 using System.Threading.Tasks;
 
 namespace Moula.Data.Repositories

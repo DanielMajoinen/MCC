@@ -1,7 +1,7 @@
 ﻿using NPoco;
 using System;
 
-namespace Moula.Data.Dto
+namespace Moula.Data.Models
 {
     [TableName("Ledger")]
     [PrimaryKey("Id")]
