@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Moula.Business.Services
 {
-    interface ILedgerService
+    public interface ILedgerService
     {
     }
 }
