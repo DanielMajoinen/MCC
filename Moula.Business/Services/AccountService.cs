@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Moula.Business.Services
 {
+    /// <summary>
+    /// The account service is responsible for talking to the data access layer in order to retrieve all things account related.
+    /// </summary>
     public class AccountService : IAccountService
     {
         private readonly IAccountRepository _accountRepository;
@@ -17,8 +20,15 @@ namespace Moula.Business.Services
             _ledgerRepository = ledgerRepository;
         }
 
+        /// <summary>
+        /// Retrieve an accounts ledger for a given accountId.
+        /// This talks with the data access layer.
+        /// </summary>
+        /// <param name="accountId">The account to retrieve ledger of.<param>
+        /// <returns>Returns an accounts ledger if found or null otherwise.</returns>
         public async Task<AccountLedger> GetAccountLedgerAsync(int accountId)
         {
+            // Parallel async calls to save time
             var accountTask = _accountRepository.GetAccountAsync(accountId);
             var ledgerTask = _ledgerRepository.GetLedgerByAccountAsync(accountId);
 
@@ -27,6 +37,7 @@ namespace Moula.Business.Services
             var account = await accountTask;
             var ledger = await ledgerTask;
 
+            // Map results to return type
             return account == null
                 ? null
                 : new AccountLedger
