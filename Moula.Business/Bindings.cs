@@ -9,7 +9,7 @@ namespace Moula.Business
         public static void RegisterBusiness(this IServiceCollection services)
         {
             services.RegisterData(); // Register data bindings
-            services.AddTransient<ILedgerService, LedgerService>();
+            services.AddTransient<IAccountService, AccountService>();
         }
     }
 }
