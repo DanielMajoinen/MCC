@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Moula.Contracts\Moula.Contracts.csproj" />
     <ProjectReference Include="..\Moula.Data\Moula.Data.csproj" />
   </ItemGroup>
 
