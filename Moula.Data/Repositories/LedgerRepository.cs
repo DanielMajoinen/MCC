@@ -1,5 +1,4 @@
 ﻿using Moula.Data.Dto;
-using NPoco;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,16 +6,19 @@ namespace Moula.Data.Repositories
 {
     public class LedgerRepository : ILedgerRepository
     {
-        private readonly IDatabase _database;
+        private readonly IDatabaseFactory _databaseFactory;
 
-        public LedgerRepository(IDatabase database)
+        public LedgerRepository(IDatabaseFactory databaseFactory)
         {
-            _database = database;
+            _databaseFactory = databaseFactory;
         }
 
         public Task<List<Ledger>> GetAccountLedgerAsync(int accountId)
         {
-            return _database.FetchAsync<Ledger>("EXEC [dbo].[uspLedger_FetchByAccount] @AccountId=@0", accountId);
+            using (var db = _databaseFactory.CreateConnection())
+            {
+                return db.FetchAsync<Ledger>("EXEC [dbo].[uspLedger_FetchByAccount] @AccountId=@0", accountId);
+            }
         }
     }
 }

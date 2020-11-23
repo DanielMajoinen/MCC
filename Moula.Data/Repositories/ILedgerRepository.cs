@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Moula.Data.Repositories
 {
-    interface ILedgerRepository
+    public interface ILedgerRepository
     {
         Task<List<Ledger>> GetAccountLedgerAsync(int accountId);
     }
