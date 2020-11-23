@@ -1,6 +1,6 @@
 using AutoFixture;
 using Moq;
-using Moula.Data.Dto;
+using Moula.Data.Models;
 using Moula.Data.Repositories;
 using NPoco;
 using System;
@@ -17,7 +17,7 @@ namespace Moula.Data.Tests
         private readonly Mock<IDatabaseFactory> _mockDatabaseFactory = new Mock<IDatabaseFactory>();
 
         [Fact]
-        public async Task GetAccountLedgerAsync_ListOfLedgerEntriesRetrievedSuccessfully()
+        public async Task GetLedgerByAccountAsync_ListOfLedgerEntriesRetrievedSuccessfully()
         {
             // Arrange
             var expectedLedgerEntries = _fixture.CreateMany<Ledger>().ToList();
@@ -29,7 +29,7 @@ namespace Moula.Data.Tests
             var ledgerRepository = new LedgerRepository(_mockDatabaseFactory.Object);
 
             // Act
-            var result = await ledgerRepository.GetAccountLedgerAsync(0);
+            var result = await ledgerRepository.GetLedgerByAccountAsync(0);
 
             // Assert
             Assert.Equal(expectedLedgerEntries, result);
@@ -37,7 +37,7 @@ namespace Moula.Data.Tests
         }
 
         [Fact]
-        public async Task GetAccountLedgerAsync_ExceptionThrownAccessingDatabase()
+        public async Task GetLedgerByAccountAsync_ExceptionThrownAccessingDatabase()
         {
             // Arrange
             _mockDatabaseFactory.Setup(f => f.CreateConnection()).Returns(_mockDatabase.Object);
@@ -47,7 +47,7 @@ namespace Moula.Data.Tests
             var ledgerRepository = new LedgerRepository(_mockDatabaseFactory.Object);
 
             // Act & Assert
-            await Assert.ThrowsAsync<Exception>(() => ledgerRepository.GetAccountLedgerAsync(0));
+            await Assert.ThrowsAsync<Exception>(() => ledgerRepository.GetLedgerByAccountAsync(0));
             _mockDatabase.Verify(d => d.FetchAsync<Ledger>(It.IsAny<string>(), It.IsAny<object>()), Times.Once);
         }
     }
