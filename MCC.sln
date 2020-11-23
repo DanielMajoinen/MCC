@@ -7,9 +7,13 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Moula.Database", "Moula.Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moula.Api", "Moula.Api\Moula.Api.csproj", "{ADE53FC6-0C9C-43F4-863D-57BAD9524D3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moula.Business", "Moula.Business\Moula.Business.csproj", "{6256BEEB-BA21-4633-A54C-18B237EEB23D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moula.Business", "Moula.Business\Moula.Business.csproj", "{6256BEEB-BA21-4633-A54C-18B237EEB23D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moula.Data", "Moula.Data\Moula.Data.csproj", "{2934FC17-4007-4D5E-916F-3168A851E9D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moula.Data", "Moula.Data\Moula.Data.csproj", "{2934FC17-4007-4D5E-916F-3168A851E9D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moula.Data.Tests", "Moula.Data.Tests\Moula.Data.Tests.csproj", "{5DF622AE-3D3E-41C3-A225-C67987926D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moula.Contracts", "Moula.Contracts\Moula.Contracts.csproj", "{99CF286B-17CC-418A-9FDD-9839C0F4F5A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,14 @@ Global
 		{2934FC17-4007-4D5E-916F-3168A851E9D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2934FC17-4007-4D5E-916F-3168A851E9D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2934FC17-4007-4D5E-916F-3168A851E9D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF622AE-3D3E-41C3-A225-C67987926D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF622AE-3D3E-41C3-A225-C67987926D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF622AE-3D3E-41C3-A225-C67987926D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF622AE-3D3E-41C3-A225-C67987926D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99CF286B-17CC-418A-9FDD-9839C0F4F5A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99CF286B-17CC-418A-9FDD-9839C0F4F5A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99CF286B-17CC-418A-9FDD-9839C0F4F5A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99CF286B-17CC-418A-9FDD-9839C0F4F5A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
