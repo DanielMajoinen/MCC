@@ -13,7 +13,7 @@ namespace Moula.Data.Repositories
             _databaseFactory = databaseFactory;
         }
 
-        public async Task<List<Ledger>> GetAccountLedgerAsync(int accountId)
+        public async Task<List<Ledger>> GetLedgerByAccountAsync(int accountId)
         {
             using (var db = _databaseFactory.CreateConnection())
             {
