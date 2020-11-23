@@ -1,4 +1,5 @@
-﻿using NPoco;
+﻿using Microsoft.Extensions.Configuration;
+using NPoco;
 using System.Data.SqlClient;
 
 namespace Moula.Data
@@ -8,11 +9,13 @@ namespace Moula.Data
     /// </summary>
     public class DatabaseFactory : IDatabaseFactory
     {
+        private const string Database = "Moula";
+
         private string _connectionString { get; }
 
-        public DatabaseFactory(string connectionString)
+        public DatabaseFactory(IConfiguration config)
         {
-            _connectionString = connectionString;
+            _connectionString = config.GetConnectionString(Database);
         }
 
         public IDatabase CreateConnection()
