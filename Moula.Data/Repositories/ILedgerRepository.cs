@@ -6,6 +6,6 @@ namespace Moula.Data.Repositories
 {
     interface ILedgerRepository
     {
-        Task<IEnumerable<Ledger>> GetAccountLedgerAsync(int accountId);
+        Task<List<Ledger>> GetAccountLedgerAsync(int accountId);
     }
 }
