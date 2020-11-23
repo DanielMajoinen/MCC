@@ -68,6 +68,7 @@
     <Build Include="dbo\Tables\Status.sql" />
     <Build Include="dbo\Stored Procedures\Status_Data.sql" />
     <Build Include="dbo\Stored Procedures\uspLedger_FetchByAccount.sql" />
+    <Build Include="dbo\Stored Procedures\uspAccount_Fetch.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post-Deployment\Script.PostDeployment.sql" />
