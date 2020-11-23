@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Moula.Data.Repositories;
 
 namespace Moula.Data
@@ -9,6 +9,7 @@ namespace Moula.Data
         {
             services.AddSingleton<IDatabaseFactory>(new DatabaseFactory("server=.,1433;database=Moula;user id=SA;password=P@ssword1"));
             services.AddTransient<ILedgerRepository, LedgerRepository>();
+            services.AddTransient<IAccountRepository, AccountRepository>();
         }
     }
 }
