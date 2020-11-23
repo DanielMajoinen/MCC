@@ -13,11 +13,11 @@ namespace Moula.Data.Repositories
             _databaseFactory = databaseFactory;
         }
 
-        public Task<List<Ledger>> GetAccountLedgerAsync(int accountId)
+        public async Task<List<Ledger>> GetAccountLedgerAsync(int accountId)
         {
             using (var db = _databaseFactory.CreateConnection())
             {
-                return db.FetchAsync<Ledger>("EXEC [dbo].[uspLedger_FetchByAccount] @AccountId=@0", accountId);
+                return await db.FetchAsync<Ledger>("EXEC [dbo].[uspLedger_FetchByAccount] @@AccountId=@AccountId", new { AccountId = accountId }).ConfigureAwait(false);
             }
         }
     }
