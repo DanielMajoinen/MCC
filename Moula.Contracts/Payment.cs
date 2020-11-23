@@ -1,6 +1,8 @@
-﻿namespace Moula.Contracts
+﻿using System;
+
+namespace Moula.Contracts
 {
-    public class Ledger
+    public class Payment
     {
         public long Id { get; set; }
         public DateTime Date { get; set; }
