@@ -3,6 +3,7 @@ using Moq;
 using Moula.Data.Dto;
 using Moula.Data.Repositories;
 using NPoco;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
@@ -15,7 +16,7 @@ namespace Moula.Data.Tests
         private readonly Mock<IDatabase> _mockDatabase = new Mock<IDatabase>();
 
         [Fact]
-        public async Task GetAccountLedgerAsync_ListOfLedgerEntriesRetrieved_Successful()
+        public async Task GetAccountLedgerAsync_ListOfLedgerEntriesRetrievedSuccessfully()
         {
             // Arrange
             var expectedLedgerEntries = _fixture.CreateMany<Ledger>().ToList();
@@ -30,6 +31,20 @@ namespace Moula.Data.Tests
 
             // Assert
             Assert.Equal(expectedLedgerEntries, result);
+            _mockDatabase.Verify(d => d.FetchAsync<Ledger>(It.IsAny<string>(), It.IsAny<object>()), Times.Once);
+        }
+
+        [Fact]
+        public async Task GetAccountLedgerAsync_ExceptionThrownAccessingDatabase()
+        {
+            // Arrange
+            _mockDatabase.Setup(d => d.FetchAsync<Ledger>(It.IsAny<string>(), It.IsAny<object>()))
+                .ThrowsAsync(new Exception());
+
+            var ledgerRepository = new LedgerRepository(_mockDatabase.Object);
+
+            // Act & Assert
+            await Assert.ThrowsAsync<Exception>(() => ledgerRepository.GetAccountLedgerAsync(0));
             _mockDatabase.Verify(d => d.FetchAsync<Ledger>(It.IsAny<string>(), It.IsAny<object>()), Times.Once);
         }
     }
