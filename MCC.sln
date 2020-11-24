@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moula.Contracts", "Moula.Contracts\Moula.Contracts.csproj", "{99CF286B-17CC-418A-9FDD-9839C0F4F5A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moula.Business.Tests", "Moula.Business.Tests\Moula.Business.Tests.csproj", "{25E6ADB2-86AC-4EEF-9AF2-004212CE4618}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moula.Api.Tests", "Moula.Api.Tests\Moula.Api.Tests.csproj", "{30C83D4F-FDF9-4DB6-ABED-A880BBCC75A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,14 @@ Global
 		{99CF286B-17CC-418A-9FDD-9839C0F4F5A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99CF286B-17CC-418A-9FDD-9839C0F4F5A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99CF286B-17CC-418A-9FDD-9839C0F4F5A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25E6ADB2-86AC-4EEF-9AF2-004212CE4618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E6ADB2-86AC-4EEF-9AF2-004212CE4618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E6ADB2-86AC-4EEF-9AF2-004212CE4618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E6ADB2-86AC-4EEF-9AF2-004212CE4618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30C83D4F-FDF9-4DB6-ABED-A880BBCC75A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C83D4F-FDF9-4DB6-ABED-A880BBCC75A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C83D4F-FDF9-4DB6-ABED-A880BBCC75A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C83D4F-FDF9-4DB6-ABED-A880BBCC75A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
