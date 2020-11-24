@@ -17,13 +17,22 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Console": {
+    "dev": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/account/ledger/1",
       "applicationUrl": "http://localhost:5000;https://localhost:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "prod": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/account/ledger/1",
+      "applicationUrl": "http://localhost:5002;https://localhost:5003",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
       }
     }
   }
