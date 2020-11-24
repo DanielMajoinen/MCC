@@ -44,7 +44,7 @@ namespace Moula.Business.Services
                 {
                     Account = account.Id,
                     Balance = account.Balance,
-                    PaymentHistory = !ledger.Any()
+                    PaymentHistory = ledger == null || !ledger.Any()
                         ? new List<Payment>()
                         : ledger.Select(l => new Payment
                         {
