@@ -5,7 +5,7 @@ Welcome and thanks for checking out my implementation of the Moula Coding Challe
 
 ## Overview
 
-I have broken this service up into 3 separate layers.
+I have broken the Web API up into 3 separate layers.
 
 1. API - This is the public entry point and contains no business logic.
 2. Business - This contains any business and service layer logic.
