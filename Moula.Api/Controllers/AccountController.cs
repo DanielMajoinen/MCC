@@ -32,7 +32,7 @@ namespace Moula.Api.Controllers
         /// <returns>Returns an accounts ledger if found or 404 when the account does not exist.</returns>
         [HttpGet]
         [Route("ledger/{accountId}")]
-        public async Task<ActionResult<AccountLedger>> Get([FromRoute] int accountId)
+        public async Task<IActionResult> Get([FromRoute] int accountId)
         {
             AccountLedger accountLedger;
 
@@ -52,7 +52,7 @@ namespace Moula.Api.Controllers
                 return NotFound();
 
             // JSON serialisation automatically occurs
-            return accountLedger;
+            return Ok(accountLedger);
         }
     }
 }
